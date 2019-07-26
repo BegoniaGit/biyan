@@ -4,9 +4,6 @@
 <img alt="GitHub release" src="https://img.shields.io/github/release/BegoniaGit/biyan">
 <a href="https://github.com/BegoniaGit/biyan/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/BegoniaGit/biyan"></a></image>
 </div>
-<div  style="align:center">
-<image src="https://raw.githubusercontent.com/BegoniaGit/images/master/img/20190614161907.png">
-</div>
 
 > 认识
 1. 该技术框架由Java语言构建，旨在快速搭建RESTful后端服务
