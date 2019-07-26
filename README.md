@@ -1,9 +1,9 @@
-<div  style="text-align:center">
+<div  style="align:center">
 <H1>biyan Java后端服务框架</H1>
+<image src="https://raw.githubusercontent.com/BegoniaGit/images/master/img/20190614161907.png"></image>
 <img alt="GitHub release" src="https://img.shields.io/badge/java-%3E%3D1.8-blue">
 <img alt="GitHub release" src="https://img.shields.io/github/release/BegoniaGit/biyan">
 <a href="https://github.com/BegoniaGit/biyan/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/BegoniaGit/biyan"></a>
-<image src="https://raw.githubusercontent.com/BegoniaGit/images/master/img/20190614161907.png"></image>
 </div>
 
 > 认识
