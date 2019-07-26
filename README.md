@@ -1,11 +1,12 @@
-<div  style="align:center">
-<H1>biyan Java后端服务框架</H1>
-<image src="https://raw.githubusercontent.com/BegoniaGit/images/master/img/20190614161907.png"></image>
+<div  style="text-align:center">
+<H1 >biyan Java后端服务框架</H1>
 <img alt="GitHub release" src="https://img.shields.io/badge/java-%3E%3D1.8-blue">
 <img alt="GitHub release" src="https://img.shields.io/github/release/BegoniaGit/biyan">
-<a href="https://github.com/BegoniaGit/biyan/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/BegoniaGit/biyan"></a>
+<a href="https://github.com/BegoniaGit/biyan/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/BegoniaGit/biyan"></a></image>
 </div>
-
+<div  style="text-align:center">
+<image src="https://raw.githubusercontent.com/BegoniaGit/images/master/img/20190614161907.png">
+</div>
 > 认识
 1. 该技术框架由Java语言构建，旨在快速搭建RESTful后端服务
 2. biyan支持单文件配置几乎所有服务参数，包括基本参数，数据库，系统安全和非法拦截等，并具有高并发特性。非常适合作为博客系统后端服务。底层大量使用多线程技术和Java反射机制，简化用户对后端的基本使用。
