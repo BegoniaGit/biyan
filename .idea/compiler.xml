@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="YServer" />
+        <module name="biyan" />
         <module name="server" />
+        <module name="YServer" />
       </profile>
     </annotationProcessing>
   </component>
