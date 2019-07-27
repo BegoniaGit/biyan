@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="YKit">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../YKit/out/artifacts/YKit_jar/YKit.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
