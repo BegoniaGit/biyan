@@ -10,6 +10,7 @@ package yan.biyan.anno.loader;
  *
  */
 
+import site.yan.kit.Stamp;
 import yan.biyan.anno.Load;
 import yan.biyan.anno.PostMatching;
 import yan.biyan.anno.PrimeMatching;
@@ -32,16 +33,18 @@ public class Scanner {
     public static Map<String, MethodAndClass> URL_METHOD_AND_CLASS = new HashMap<>();
 
 
-    static {
+    public Scanner(String packageName) {
         Set<Class<?>> classList = null;
+
+        //获取controller类
         try {
-            classList = getControllers("crabapple.http_server.test");
+            classList = getControllers(packageName);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         for (Class<?> cla : classList) {
-            System.out.println(cla);
+            Stamp.war(cla);
             PrimeMatching primeMatching = cla.getAnnotation(PrimeMatching.class);
             String pre = primeMatching.value();
 
@@ -62,19 +65,21 @@ public class Scanner {
         }
 
 
+        //扫描该框架包和项目包
         try {
-            classList = getClasses("crabapple.http_server");
-
+            classList = getClasses(packageName);
+            classList.addAll(getClasses("yan.biyan"));
 
             for (Class<?> cla : classList) {
 
                 Field[] fields = cla.getFields();
+                //遍历每个类的每个字段域
                 for (Field field : fields) {
                     Load load = field.getDeclaredAnnotation(Load.class);
                     if (load != null) {
                         String name = load.value();
                         String param = LoadConfig.parameter.get(name);
-                        System.out.println(param);
+                        Stamp.war(param);
                         if (param != null) {
                             if (field.getType().getName().indexOf("int") != -1)
                                 field.set(cla.newInstance(), Integer.valueOf(Integer.valueOf(param)));
@@ -112,13 +117,14 @@ public class Scanner {
         try {
             dirs = Thread.currentThread().getContextClassLoader().getResources(packageDirName);
 
+            Stamp.war("Controller加载路径 "+dirs.toString());
 
             // 循环迭代下去
             while (dirs.hasMoreElements()) {
                 // 获取下一个元素
                 URL url = dirs.nextElement();
 
-                System.out.println(url.getPath());
+                Stamp.war(url.getPath());
                 // 得到协议的名称
                 String protocol = url.getProtocol();
                 // 如果是以文件的形式保存在服务器上
@@ -197,7 +203,7 @@ public class Scanner {
         classes.add(classLoader.loadClass(classsName));
     }
 
-    //找也用了Controller注解的类
+    //扫描Controller注解的类
     private static Set<Class<?>> controllers;
 
     private static Set<Class<?>> getControllers(String packageName) throws Exception {

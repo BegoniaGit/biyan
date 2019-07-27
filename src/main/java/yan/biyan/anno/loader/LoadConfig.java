@@ -10,6 +10,8 @@ package yan.biyan.anno.loader;
  *
  */
 
+import site.yan.kit.Stamp;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,8 +20,10 @@ public class LoadConfig {
 
     public static Map<String, String> parameter = new HashMap<>();
 
-    static {
-        String path = "D:\\300 Project\\301 CODE\\raspberry\\code\\src\\crabapple\\http_server_test\\src\\main\\resource\\carambola.yan";
+    public LoadConfig(String URL) {
+        String path = URL+"carambola.yan";
+
+        Stamp.log("读取配置文件 "+path);
 
         try {
 

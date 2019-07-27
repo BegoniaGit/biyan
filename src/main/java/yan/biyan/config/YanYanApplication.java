@@ -10,16 +10,23 @@ package yan.biyan.config;
  *
  */
 
+import site.yan.kit.Stamp;
 import yan.biyan.HttpServer;
 import yan.biyan.anno.loader.LoadConfig;
 import yan.biyan.anno.loader.Scanner;
 
 public class YanYanApplication {
 
-    public YanYanApplication() throws Exception {
-        new LoadConfig();
-        new Scanner();
-        HttpServer httpServer =new HttpServer();
+    public YanYanApplication(Class startClass) throws Exception {
+        String packageName=startClass.getPackage().getName();
+        String URL = this.getClass().getResource("/").getPath();
+        if (URL.charAt(0) == '/')
+            URL = URL.substring(1, URL.length());
+        URL = URL.replaceAll("%20", " ");
+        Stamp.log("项目路径 " + URL);
+        new LoadConfig(URL);
+        new Scanner(packageName);
+        HttpServer httpServer = new HttpServer();
         httpServer.setBasePath("C:/Users/Think/Pictures/fish");
         httpServer.start();
     }
